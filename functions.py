@@ -24,3 +24,7 @@ def joke():
 
 def offbot():
     sys.exit()
+
+def search():
+   # webbrowser.open(f"https://yandex.ru/search/?text={request}", new=2)
+    pass
