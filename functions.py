@@ -1,3 +1,4 @@
+from api import api
 import webbrowser, pyttsx3, requests, sys, pyjokes
 
 from textblob import TextBlob
@@ -12,7 +13,7 @@ def speaker(text):
     engine.runAndWait()
 
 def weather():
- params = {'q': 'Tver', 'units': 'metric', 'lang': 'ru', 'appid': '0492c630be20232aa9f77c238272d638'}
+ params = {'q': 'Tver', 'units': 'metric', 'lang': 'ru', 'appid': api}
  response = requests.get(f'https://api.openweathermap.org/data/2.5/weather', params=params)
  w = response.json()
  speaker(f"На улице {w['weather'][0]['description']} {round(w['main']['temp'])} градусов" )
