@@ -26,14 +26,9 @@ def neutral():
 
 def joke():
  joke = pyjokes.get_joke()
- print(joke)
  blob = TextBlob(joke)
  end = blob.translate(from_lang='en', to='ru')
  speaker(end)
 
 def offbot():
     sys.exit()
-
-def search():
-   # webbrowser.open(f"https://yandex.ru/search/?text={request}", new=2)
-    pass
