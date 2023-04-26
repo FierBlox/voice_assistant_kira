@@ -15,7 +15,7 @@ device = sd.default.device
 samplerate = int(sd.query_devices(device[0], 'input')['default_samplerate']) 
 
 
-def callback(indata):
+def callback(indata, frames, time, status):
     q.put(bytes(indata))
 
 

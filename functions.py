@@ -1,7 +1,7 @@
 from api import api
-import webbrowser, pyttsx3, requests, sys, pyjokes
-
-from textblob import TextBlob
+from jokes import jokes
+from random import randint
+import webbrowser, pyttsx3, requests, sys
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -25,10 +25,8 @@ def neutral():
     pass
 
 def joke():
- joke = pyjokes.get_joke()
- blob = TextBlob(joke)
- end = blob.translate(from_lang='en', to='ru')
- speaker(end)
+ index = randint(0, len(jokes) - 1)
+ speaker(jokes[index])
 
 def offbot():
     sys.exit()
